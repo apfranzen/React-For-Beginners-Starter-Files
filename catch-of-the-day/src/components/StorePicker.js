@@ -24,7 +24,7 @@ class StorePicker extends React.Component {
     // Any where else
     // Render is a methd bound to the component
     return (
-      <form className="store-selector" onSubmit={this.goToStore.bind(this)}>
+      <form className="store-selector" onSubmit={(e) => this.goToStore(e)}>
         <h2>Please Enter A Store</h2>
         <input type="text" required placeholder="Store Name" defaultValue={getFunName()} ref={(input) => { this.storeInput = input}} />
         <button type="submit">Visit Store →</button>
