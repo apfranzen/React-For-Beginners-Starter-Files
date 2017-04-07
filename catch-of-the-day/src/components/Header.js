@@ -1,7 +1,6 @@
 import React from 'react';
 
 // example of a Stateless function (a static website component)
-console.log(this);
 const Header = (props) => {
   return (
     <header className="top">
