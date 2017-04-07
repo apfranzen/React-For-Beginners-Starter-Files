@@ -21,5 +21,5 @@ const Root = () => {
   )
 }
 
-//targer tp the react element, query selector
+//targer to the react element, query selector
 render(<Root/>, document.querySelector('#main'))
