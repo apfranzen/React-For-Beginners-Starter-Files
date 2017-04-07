@@ -5,15 +5,14 @@ class Order extends React.Component {
   // you have to do this if you use 'this' in a function that isn't render - you need to bind
   constructor() {
     super();
-    this.renderOrder = this.renderOrder.bind(this);
+    this.renderOrder = this.renderOrder.bind(this); // this binds renderOrder to Order, so that you can access things on order such as props
   }
-
   renderOrder(key) {
     const fish = this.props.fishes[key];
     const count = this.props.order[key];
 
-    if(!this || fish.status === 'unavailable') {
-      return <li key={key}>Sorry, {fish ? fish.name : 'fish'} Fish no longer available!</li>
+    if(!fish || fish.status === 'unavailable') {
+      return <li key={key}>Sorry, {fish ? fish.name : 'fish'} is no longer available!</li>
     }
 
     return (
@@ -23,14 +22,15 @@ class Order extends React.Component {
       </li>
     )
   }
+
   render() {
     const orderIds = Object.keys(this.props.order);
     const total = orderIds.reduce((prevTotal, key) => {
       const fish = this.props.fishes[key];
       const count = this.props.order[key];
       const isAvailable = fish && fish.status === 'available';
-      if (isAvailable) {
-        return prevTotal + (count * fish.price || 0);
+      if(isAvailable) {
+        return prevTotal + (count * fish.price || 0)
       }
       return prevTotal;
     }, 0);
@@ -44,6 +44,7 @@ class Order extends React.Component {
             {formatPrice(total)}
           </li>
         </ul>
+
       </div>
     )
   }

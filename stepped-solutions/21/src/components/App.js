@@ -9,6 +9,10 @@ import base from '../base';
 class App extends React.Component {
   constructor() {
     super();
+    // this is where our state lives
+    // this is where the fish swims up stream
+
+    // this will bind fish method to App component - you could do $r.addFish({name: 'cool', price: 1000})
 
     this.addFish = this.addFish.bind(this);
     this.updateFish = this.updateFish.bind(this);
