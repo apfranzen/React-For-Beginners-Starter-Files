@@ -22,4 +22,4 @@ const Root = () => {
 }
 
 //targer to the react element, query selector
-render(<Root/>, document.querySelector('#main'))
+render(<Root/>, document.querySelector('#main'));
