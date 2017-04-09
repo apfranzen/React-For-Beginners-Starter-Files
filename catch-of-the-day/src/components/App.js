@@ -89,6 +89,15 @@ class App extends React.Component {
     });
   }
 
+  /*
+  // ES6 way of doing this
+  loadSamples = () => {
+    this.setState({
+      fishes: sampleFishes
+    });
+  };
+  */
+
   addToOrder(key) {
     // take a copy of our state
     const order = {...this.state.order};
@@ -128,6 +137,7 @@ class App extends React.Component {
           loadSamples={this.loadSamples}
           fishes={this.state.fishes}
           updateFish={this.updateFish}
+          storeId={this.props.params.storeId}
           /> {/* addFish={this.addFish} pases the addFish function down to Inventory component */}
       </div>
     )
